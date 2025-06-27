@@ -38,16 +38,9 @@ fire-detection-ai/
 ```bash
 pip install -r requirements.txt
 
-### 2️⃣ Train the model
-```bash
+2️⃣ Train the model
 python src/train.py
 Ensure your dataset is in dataset/fire/ and dataset/no_fire/.
 
-### 3️⃣ Predict fire in an image
-```bash
+3️⃣ Predict fire in an image
 python src/predict.py path/to/image.jpg
-
-
-
-
-
