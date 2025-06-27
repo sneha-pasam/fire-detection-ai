@@ -1,7 +1,20 @@
+# Ignore datasets and large files
+dataset/
+*.h5
+*.ckpt
+*.pth
+*.pt
+*.log
+*.csv
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Python cache
 __pycache__/
 *.pyc
-*.h5
-*.mp3
+*.pyo
+*.pyd
+
+# VSCode
 .vscode/
-.env
-.DS_Store
