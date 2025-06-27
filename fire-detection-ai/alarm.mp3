@@ -1,0 +1,53 @@
+import cv2
+import numpy as np
+import tensorflow as tf
+from playsound import playsound
+import threading
+import os
+
+# Alarm function in a thread-safe way
+def play_alarm():
+    alarm_path = os.path.join(os.getcwd(), "alarm.mp3")  # Replace with your sound file
+    try:
+        playsound(alarm_path)
+    except Exception as e:
+        print(f"Alarm Error: {e}")
+
+def run_webcam_detection():
+    model = tf.keras.models.load_model('models/fire_model.h5')
+    cap = cv2.VideoCapture(0)
+    alarm_triggered = False
+
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            break
+
+        resized = cv2.resize(frame, (128, 128))
+        normalized = resized / 255.0
+        reshaped = np.reshape(normalized, (1, 128, 128, 3))
+
+        prediction = model.predict(reshaped)[0][0]
+        label = "Fire" if prediction > 0.5 else "No Fire"
+        color = (0, 0, 255) if label == "Fire" else (0, 255, 0)
+
+        # Display prediction
+        cv2.putText(frame, f"{label} ({prediction:.2f})", (10, 30),
+                    cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)
+        cv2.imshow("Fire Detection", frame)
+
+        # Play alarm if fire detected and alarm not already playing
+        if label == "Fire" and not alarm_triggered:
+            threading.Thread(target=play_alarm, daemon=True).start()
+            alarm_triggered = True
+
+        # Reset alarm trigger if no fire
+        if label == "No Fire":
+            alarm_triggered = False
+
+        # Quit on 'q'
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+    cap.release()
+    cv2.destroyAllWindows()
