@@ -43,7 +43,7 @@ Copy code
 ### 1. 🔧 Setup Environment
 
 ```bash
-**# Create and activate a virtual environment
+# Create and activate a virtual environment
 python -m venv venv
 venv\Scripts\activate        # On Windows
 # or
@@ -51,15 +51,15 @@ source venv/bin/activate     # On Linux/Mac
 
 # Install dependencies
 pip install -r requirements.txt
-### 2. 🧠 Train the Model
+🧠 Train the Model
 ```bash
 Copy code
 python src/train.py
-### 3. 🔍 Run Detection on an Image
+🔍 Run Detection on an Image
 ```bash
 Copy code
 python src/predict.py --image path/to/image.jpg
-### 4. 📹 Real-Time Detection via Webcam
+📹 Real-Time Detection via Webcam
 ```bash
 Copy code
 python src/realtime_detect.py
@@ -73,4 +73,4 @@ python src/realtime_detect.py
  Build a web dashboard for alerts
 
 🤝 Contributors
-Sneha Pasam**
+Sneha Pasam
