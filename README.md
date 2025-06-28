@@ -49,15 +49,16 @@ source venv/bin/activate     # On Linux/Mac
 
 # Install dependencies
 pip install -r requirements.txt
+
 # 🧠 Train the Model
-```bash
 python src/train.py
+
 # 🔍 Run Detection on an Image
-```bash
 python src/predict.py --image path/to/image.jpg
+
 # 📹 Real-Time Detection via Webcam
-```bash
 python src/realtime_detect.py
+
 # 📌 To-Do
  Improve model accuracy
 
