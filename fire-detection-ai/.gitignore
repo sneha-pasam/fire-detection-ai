@@ -1,0 +1,53 @@
+# Ignore virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# Ignore dataset and large model/checkpoint files
+dataset/
+*.h5
+*.ckpt
+*.pth
+*.pt
+*.log
+*.csv
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore VSCode settings
+.vscode/
+
+# Ignore environment and config files
+.env
+*.env
+
+# Ignore OS/system files
+.DS_Store
+Thumbs.db
+
+# Ignore test coverage, builds, and distributions
+htmlcov/
+coverage.*
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Ignore logs
+*.log
+
+# Ignore generated files (optional)
+*.sqlite3
+*.db
+
+# Ignore untracked files
+*.output.avi
+*.test_images/
