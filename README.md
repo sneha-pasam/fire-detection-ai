@@ -35,8 +35,6 @@ fire-detection-ai/
 ├── .gitignore # Files/folders to exclude from Git
 └── README.md # Project documentation
 
-bash
-Copy code
 
 ## 🧪 How to Use
 
@@ -51,16 +49,16 @@ source venv/bin/activate     # On Linux/Mac
 
 # Install dependencies
 pip install -r requirements.txt
-🧠 Train the Model
+# 🧠 Train the Model
 ```bash
 python src/train.py
-🔍 Run Detection on an Image
+# 🔍 Run Detection on an Image
 ```bash
 python src/predict.py --image path/to/image.jpg
-📹 Real-Time Detection via Webcam
+# 📹 Real-Time Detection via Webcam
 ```bash
 python src/realtime_detect.py
-📌 To-Do
+# 📌 To-Do
  Improve model accuracy
 
  Add email/SMS alert system
