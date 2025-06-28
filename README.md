@@ -53,15 +53,12 @@ source venv/bin/activate     # On Linux/Mac
 pip install -r requirements.txt
 🧠 Train the Model
 ```bash
-Copy code
 python src/train.py
 🔍 Run Detection on an Image
 ```bash
-Copy code
 python src/predict.py --image path/to/image.jpg
 📹 Real-Time Detection via Webcam
 ```bash
-Copy code
 python src/realtime_detect.py
 📌 To-Do
  Improve model accuracy
@@ -72,5 +69,5 @@ python src/realtime_detect.py
 
  Build a web dashboard for alerts
 
-🤝 Contributors
+🤝 Contributor
 Sneha Pasam
