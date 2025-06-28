@@ -1,46 +1,76 @@
 # 🔥 Fire Detection System using AI
 
-A real-time fire detection system using deep learning and OpenCV. The system is capable of classifying images as "fire" or "no fire" and can perform real-time fire detection through a webcam feed.
-
----
+This project is an AI-based fire detection system that uses deep learning and computer vision to identify fire in real-time through video input. It triggers an alarm when fire is detected.
 
 ## 🚀 Features
 
-- 🧠 Train a CNN model to classify fire vs. no-fire images
-- 🖼️ Predict fire from uploaded images
-- 🎥 Real-time fire detection using webcam (OpenCV)
-- 🔔 Alarm sound when fire is detected (optional)
+- Real-time fire detection using OpenCV
+- Custom-trained CNN model for fire classification
+- Alarm system triggered on fire detection
+- Video input via webcam or video files
+- Easy to use and extend
 
----
+## 🛠️ Tech Stack
+
+- Python
+- TensorFlow / Keras
+- OpenCV
+- NumPy
+- Virtual Environment for dependency management
 
 ## 📁 Project Structure
 
 fire-detection-ai/
-├── dataset/ # Local training data (excluded from repo)
-│ ├── fire/
-│ └── no_fire/
-├── src/
-│ ├── train.py # Script to train the CNN model
-│ ├── predict.py # Script to predict fire from image
-│ ├── realtime_detect.py # Script for webcam-based real-time detection
-│ └── utils.py # Helper functions (if any)
-├── alarm.mp3 # Alarm sound (played when fire is detected)
-├── requirements.txt # List of required Python packages
-├── .gitignore # Ignoring large dataset & unnecessary files
-└── README.md
+│
+├── src/ # Source code
+│ ├── train.py # Model training script
+│ ├── predict.py # Prediction on static images
+│ └── realtime_detect.py # Real-time fire detection via webcam/video
+│
+├── dataset/ # Image dataset (ignored in Git)
+├── venv/ # Python virtual environment (ignored in Git)
+├── alarm.mp3 # Alarm sound file
+├── test_images/ # Test images folder (optional)
+├── output.avi # Output video file (ignored in Git)
+├── .gitignore # Files/folders to exclude from Git
+└── README.md # Project documentation
 
+bash
+Copy code
 
----
+## 🧪 How to Use
 
-## 🧪 Setup & Usage
+### 1. 🔧 Setup Environment
 
-### 1️⃣ Install dependencies
 ```bash
+**# Create and activate a virtual environment
+python -m venv venv
+venv\Scripts\activate        # On Windows
+# or
+source venv/bin/activate     # On Linux/Mac
+
+# Install dependencies
 pip install -r requirements.txt
-
-2️⃣ Train the model
+### 2. 🧠 Train the Model
+```bash
+Copy code
 python src/train.py
-Ensure your dataset is in dataset/fire/ and dataset/no_fire/.
+### 3. 🔍 Run Detection on an Image
+```bash
+Copy code
+python src/predict.py --image path/to/image.jpg
+### 4. 📹 Real-Time Detection via Webcam
+```bash
+Copy code
+python src/realtime_detect.py
+📌 To-Do
+ Improve model accuracy
 
-3️⃣ Predict fire in an image
-python src/predict.py path/to/image.jpg
+ Add email/SMS alert system
+
+ Deploy using Flask + Docker
+
+ Build a web dashboard for alerts
+
+🤝 Contributors
+Sneha Pasam**
